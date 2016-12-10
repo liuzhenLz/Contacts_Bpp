@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Contacts_Bpp.Views.login"  BackgroundColor="#0f0b08" NavigationPage.HasNavigationBar="False" >
+
+  <RelativeLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+    <Image Source="k9.jpg" Aspect="AspectFit" VerticalOptions="Fill"
+        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,Property=Width,Factor=0,Constant=0}"
+        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,Property=Height,Factor=0,Constant=0}"
+        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}" />
+    <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,Property=Width,Factor=0,Constant=0}"
+        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,Property=Height,Factor=0,Constant=0}"
+        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1,Constant=0}">
+      <Frame AbsoluteLayout.LayoutBounds="0.5,0.88,0.8,0.4" AbsoluteLayout.LayoutFlags="All" HasShadow="True" OutlineColor="Blue" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Silver" Opacity="0.4" Padding="10,10,10,10">
+        <AbsoluteLayout>
+          <Image AbsoluteLayout.LayoutBounds="0.5,0,80,80" AbsoluteLayout.LayoutFlags="XProportional"  Source="xmf_21.png" BackgroundColor="Red"/>
+          <StackLayout Orientation="Horizontal" AbsoluteLayout.LayoutBounds="0.5,90,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="XProportional">
+            <Label Text="账 号：" BackgroundColor="Blue"/>
+            <Entry x:Name="ety_account" Text="707440305" TextColor="Black" Placeholder="请输入账号" BackgroundColor="Olive" WidthRequest="150"/>
+          </StackLayout>
+          <StackLayout Orientation="Horizontal" AbsoluteLayout.LayoutBounds="0.5,130,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="XProportional">
+            <Label Text="密 码：" BackgroundColor="Blue" />
+            <Entry x:Name="ety_pwd" Text="123456" TextColor="Black" Placeholder="请输入密码" BackgroundColor="Olive" WidthRequest="150"/>
+          </StackLayout>
+          <Button Text="登 录" WidthRequest="100" Clicked="clicked_login" AbsoluteLayout.LayoutBounds="0.5,1,150,AutoSize" AbsoluteLayout.LayoutFlags="PositionProportional"  BackgroundColor="Yellow"/>
+        </AbsoluteLayout>
+      </Frame>
+    </AbsoluteLayout>
+  </RelativeLayout>
+</ContentPage>

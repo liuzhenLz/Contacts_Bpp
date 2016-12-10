@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Contacts_Bpp.Views.Detailed" NavigationPage.HasNavigationBar="False">
+  <StackLayout BackgroundColor="Silver" Spacing="0">
+    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="10,0,10,0">
+      <Label Text="0x3c"/>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal" Padding="30,0,20,0">
+      <Image HeightRequest="80" WidthRequest="80" BackgroundColor="Red"/>
+      <Label Text="{Binding Name}" FontSize="30" VerticalTextAlignment="Center"/>
+    </StackLayout>
+    <!--详细信息-->
+    <StackLayout Spacing="0"  HeightRequest="80" Padding="30,0,20,0">
+      <Label Text="{Binding Tel}" TextColor="Black"  HeightRequest="50" VerticalTextAlignment="Center" BackgroundColor="Yellow"/>
+      <StackLayout Orientation="Horizontal" Spacing="0"  HeightRequest="30">
+        <Label WidthRequest="1" VerticalOptions="FillAndExpand"/>
+        <Label Text="{Binding Address}" TextColor="Black" VerticalTextAlignment="Start" BackgroundColor="Navy" VerticalOptions="FillAndExpand"/>
+        <Label WidthRequest="1" VerticalOptions="FillAndExpand"/>
+        <Label Text="{Binding Industry}" VerticalTextAlignment="Start" TextColor="Black" BackgroundColor="Navy" VerticalOptions="FillAndExpand"/>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout Spacing="0"  Padding="30,0,20,0">
+
+      <Label Text="默认铃声" TextColor="Black" HeightRequest="50" VerticalTextAlignment="Center" BackgroundColor="White"/>
+      <Label Text="二维码名片" TextColor="Black"  HeightRequest="50" VerticalTextAlignment="Center" BackgroundColor="White"/>
+    </StackLayout>
+  </StackLayout>
+
+
+
+</ContentPage>

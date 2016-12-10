@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Contacts_Bpp.Views.Tabbed_r"  Appearing="Tabbed_rappearing">
+  <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <StackLayout Spacing="0" BackgroundColor="Gray"
+                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0,Constant=0}"
+                          RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=0}"
+                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1,Constant=0}"
+                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1,Constant=0}"
+               >
+      <SearchBar HorizontalOptions="FillAndExpand" BackgroundColor="Silver"></SearchBar>
+      <!--我的群组-->
+      <RelativeLayout VerticalOptions="Fill" HeightRequest="30" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+        <StackLayout  Orientation="Horizontal" HeightRequest="30" VerticalOptions="Fill" Padding="15,0,15,0"
+              RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=0,Constant=0}"
+              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=0}"
+              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}" >
+          <Label Text="我的群组" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+          <Label Text=">" TextColor="Black" VerticalTextAlignment="Center"  VerticalOptions="FillAndExpand" />
+        </StackLayout>
+        <Button Text="****" Clicked="brn_wdqz"  BorderWidth="0" BorderRadius="0"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent"
+              RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=0,Constant=0}"
+              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=0}"
+              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}" />
+      </RelativeLayout>
+      <StackLayout Padding="15,0,15,0" BackgroundColor="White">
+        <Label HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="Gray"/>
+      </StackLayout>
+      <!--按群查找-->
+      <RelativeLayout VerticalOptions="Fill" HeightRequest="30" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+        <StackLayout  Orientation="Horizontal" HeightRequest="30" VerticalOptions="Fill" Padding="15,0,15,0"
+              RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=0,Constant=0}"
+              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=0}"
+              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}" >
+          <Label Text="按群查找" TextColor="Black" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+          <Label Text=">" TextColor="Black" VerticalTextAlignment="Center"  VerticalOptions="FillAndExpand" />
+        </StackLayout>
+        <Button Text="****" Clicked="brn_aqcz"  BorderWidth="0" BorderRadius="0"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent"
+              RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=0,Constant=0}"
+              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0,Constant=0}"
+              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}" />
+      </RelativeLayout>
+      <!--联系人列表-->
+      <StackLayout VerticalOptions="Fill" Padding="15,0,15,0" Spacing="0">
+        <ListView x:Name="listview_contact" BackgroundColor="White"  SeparatorVisibility="None" ItemSelected="list_contact_itemselected" RowHeight="31">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <!--<ViewCell.ContextActions>
+                </ViewCell.ContextActions>  {Binding Name}-->
+                <StackLayout   Spacing="0">
+                  <StackLayout Orientation="Horizontal" HeightRequest="30" Spacing="0" VerticalOptions="FillAndExpand" BackgroundColor="Blue">
+                    <Label Text="{Binding Name}" TextColor="Black" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    <Label Text=">" TextColor="Black" VerticalTextAlignment="Center"  VerticalOptions="FillAndExpand"  />
+                  </StackLayout>
+                  <Label HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="Gray" VerticalOptions="EndAndExpand"/>
+                </StackLayout>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+
+
+    </StackLayout>
+
+    <Button Text="+" FontSize="20" Clicked="btn_add" TextColor="Black" BorderWidth="0" BorderRadius="20" HeightRequest="40" WidthRequest="40" BackgroundColor="Fuchsia" Opacity="0.3"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1,Constant=-80}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-80}"
+        />
+  </RelativeLayout>
+</ContentPage>
